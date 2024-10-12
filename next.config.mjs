@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
+        dangerouslyAllowSVG: true,
         remotePatterns: [
           {
             protocol: 'https',
@@ -16,7 +17,7 @@ const nextConfig = {
 
           },
         ],
-        formats: ['image/webp','image/avif', 'image/svg+xml', 'image/jpg', 'image/jpeg', 'image/png']
+        formats: ['image/webp','image/avif']
       }
 };
 
