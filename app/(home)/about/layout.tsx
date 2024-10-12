@@ -13,7 +13,7 @@ export default function DashboardLayout({
   }) {
     return (
     <section>
-        sub layout
+        home layout
         {children}
     </section>)
   }

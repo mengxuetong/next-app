@@ -28,16 +28,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
+  overview,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
+  overview:  React.ReactNode;
 }>) {
   return (
     <html lang="en">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        Root layout
+        {/* {modal} */}
         {children}
+        {/* {overview} */}
       </body>
     </html>
   );
