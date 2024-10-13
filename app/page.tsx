@@ -1,12 +1,24 @@
 import { redirect } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link"
+import { IProduct } from '@/db/product'
+// import Link from "next/link"
 // import { useRouter } from "next/navigation";
-
-export default function Home({ searchParams }: {searchParams: {toPage: string}} ) {
+import Submit from '@/components/Submit'
+async function getList() {
+  const res = await fetch(`http://localhost:3000/api/tools`)
+  const data = await res.json()
+  return data
+}
+export default async function Home({ searchParams }: {searchParams: {toPage: string}} ) {
+  const data = await getList()
+  console.log('data:', data)
+  const { data: {list}} = data
   // const router = useRouter()
   if (searchParams.toPage === 'about') {
     redirect('/about')
+  }
+  if (!data) {
+    return `no data yet`
   }
   return (
     <div className="container mx-auto px-4 w-[1218px]">
@@ -14,16 +26,15 @@ export default function Home({ searchParams }: {searchParams: {toPage: string}} 
     <div className="flex items-center">
     <Image alt="Logo" className="mr-2" width={40} height={40}  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-z9tcWOfjB8eAwO1xiCEwlrAe.png?st=2024-10-12T13%3A48%3A11Z&amp;se=2024-10-12T15%3A48%3A11Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A07%3A29Z&amp;ske=2024-10-12T23%3A07%3A29Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=dgAUejPPA/vIcMtT7XCXE1hSZ%2Br065SUPsvOYgdOwR0%3D"/>
      <h1 className="text-xl font-bold">
-      Creator Tools
+      MuseIn Tools
      </h1>
     </div>
+    {/* pc navigator */}
     <nav className="flex items-center">
      <a className="text-white mx-2" href="#">
       Discover
      </a>
-     <a className="text-white mx-2" href="#">
-      Submit
-     </a>
+     <Submit />
      <a className="text-white mx-2" href="#">
       Log in
      </a>
@@ -31,11 +42,25 @@ export default function Home({ searchParams }: {searchParams: {toPage: string}} 
       Sign up
      </button>
     </nav>
+    {/* mobile navigator */}
+    {/* <nav>
+      <div className="menu-toggle" id="mobile-menu">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+      </div>
+      <ul className="nav-list" id="nav-list">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">服务</a></li>
+            <li><a href="#">联系</a></li>
+        </ul>
+    </nav> */}
    </header>
    <main>
     <section className="text-center my-8">
      <h2 className="text-3xl font-bold">
-      Discover the best creator tools and their alternatives
+      Discover the best MuseIn Tools and their alternatives
      </h2>
     </section>
     <section>
@@ -61,7 +86,22 @@ export default function Home({ searchParams }: {searchParams: {toPage: string}} 
        Monetization
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-       <div className="card">
+        {list.map((product: IProduct) => {
+          return (
+            <div className="card" key={product.id}>
+            <Image  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
+            <div>
+            <h3>
+              {product.title}
+            </h3>
+            <p>
+              {product.desc}
+            </p>
+            </div>
+       </div>
+          )
+        })}
+       {/* <div className="card">
         <Image  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
         <div>
          <h3>
@@ -93,7 +133,7 @@ export default function Home({ searchParams }: {searchParams: {toPage: string}} 
           Support creators with one-time donations.
          </p>
         </div>
-       </div>
+       </div> */}
       </div>
      </div>
      <div>
@@ -235,7 +275,7 @@ export default function Home({ searchParams }: {searchParams: {toPage: string}} 
    </main>
    <footer className="text-center py-4">
     <p>
-     © 2023 Creator Tools
+     © 2023 MuseIn Tools
     </p>
    </footer>
   </div>
