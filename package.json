@@ -5,11 +5,13 @@
   "module": "esnext",
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_ENV=production next build",
+    "build": "dotenv -e .env.production NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "lowdb": "^7.0.1",
     "next": "14.2.11",
     "react": "^18",

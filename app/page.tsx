@@ -5,13 +5,12 @@ import { IProduct } from '@/db/product'
 // import { useRouter } from "next/navigation";
 import Submit from '@/components/Submit'
 async function getList() {
-  const res = await fetch(`http://localhost:3000/api/tools`)
+  const res = await fetch(`${process.env.URL}/api/tools`)
   const data = await res.json()
   return data
 }
 export default async function Home({ searchParams }: {searchParams: {toPage: string}} ) {
   const data = await getList()
-  console.log('data:', data)
   const { data: {list}} = data
   // const router = useRouter()
   if (searchParams.toPage === 'about') {
