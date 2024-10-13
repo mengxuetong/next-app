@@ -10,7 +10,12 @@ export async function GET() {
         msg: 'success'
      }), {
         status: 200,
-        headers: { 'Set-Cookie': `token=556677` }
+        headers: { 
+            'Set-Cookie': `token=556677`,
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        }
      })
   }
 export async function POST() {
