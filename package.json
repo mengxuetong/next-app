@@ -5,6 +5,7 @@
   "module": "esnext",
   "scripts": {
     "dev": "next dev",
+    "build:dev": "dotenv -e .env.local next build",
     "build": "dotenv -e .env.prod next build",
     "start": "next start",
     "lint": "next lint"
