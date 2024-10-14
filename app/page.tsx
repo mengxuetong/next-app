@@ -5,7 +5,7 @@ import { IProduct } from '@/db/product'
 // import { useRouter } from "next/navigation";
 import Submit from '@/components/Submit'
 async function getList() {
-  const res = await fetch(`${process.env.URL}/api/tools`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tools`)
   const data = await res.json()
   return data
 }
