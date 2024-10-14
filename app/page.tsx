@@ -85,7 +85,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
        Monetization
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {list.map((product: IProduct) => {
+        {list?.map((product: IProduct) => {
           return (
             <div className="card" key={product.id}>
             <Image  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
