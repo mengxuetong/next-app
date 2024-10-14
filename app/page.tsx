@@ -1,11 +1,15 @@
+
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import { IProduct } from '@/db/product'
 // import Link from "next/link"
 // import { useRouter } from "next/navigation";
 import Submit from '@/components/Submit'
+
+export const dynamic = 'force-dynamic' // defaults to auto
+export const revalidate = 100 //5s后如果有请求，则重新生成该页面
 async function getList() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tools`)
+  const res = await fetch(`/api/tools`)
   const data = await res.json()
   return data
 }
