@@ -4,10 +4,13 @@ import Image from "next/image";
 import { IProduct } from '@/db/product'
 // import Link from "next/link"
 // import { useRouter } from "next/navigation";
-import Submit from '@/components/Submit'
+import Menu from '@/components/Menu';
+import MenuPc from "@/components/MenuPc";
+import Subscribe from '@/components/Subscribe'
+import Tags from '@/components/Tags'
 
-export const dynamic = 'force-dynamic' // defaults to auto
-// export const revalidate = 100 //5s后如果有请求，则重新生成该页面
+// export const dynamic = 'force-dynamic' // defaults to auto
+export const revalidate = 2 * 60 // 则重新生成该页面
 async function getList() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tools`)
   const data = await res.json()
@@ -24,66 +27,27 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
     return `no data yet`
   }
   return (
-    <div className="container mx-auto px-4 w-[1218px]">
-   <header className="flex justify-between items-center py-4">
+    <div className="mx-auto px-1 lg:px-4">
+   <header className="w-full box-border flex justify-between items-center max-lg:ml-2 lg:ml-8 lg:mr-32 py-4">
     <div className="flex items-center">
     <Image alt="Logo" className="mr-2" width={40} height={40}  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-z9tcWOfjB8eAwO1xiCEwlrAe.png?st=2024-10-12T13%3A48%3A11Z&amp;se=2024-10-12T15%3A48%3A11Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A07%3A29Z&amp;ske=2024-10-12T23%3A07%3A29Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=dgAUejPPA/vIcMtT7XCXE1hSZ%2Br065SUPsvOYgdOwR0%3D"/>
      <h1 className="text-xl font-bold">
-      MuseIn Tools
+      {process.env.NEXT_PUBLIC_APP_NAME}
      </h1>
     </div>
     {/* pc navigator */}
-    <nav className="flex items-center">
-     <a className="text-white mx-2" href="#">
-      Discover
-     </a>
-     <Submit />
-     <a className="text-white mx-2" href="#">
-      Log in
-     </a>
-     <button className="bg-blue-500 text-white px-4 py-2 rounded">
-      Sign up
-     </button>
-    </nav>
+    <MenuPc />
     {/* mobile navigator */}
-    {/* <nav>
-      <div className="menu-toggle" id="mobile-menu">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-      </div>
-      <ul className="nav-list" id="nav-list">
-            <li><a href="#">首页</a></li>
-            <li><a href="#">关于</a></li>
-            <li><a href="#">服务</a></li>
-            <li><a href="#">联系</a></li>
-        </ul>
-    </nav> */}
+    <Menu />
    </header>
-   <main>
+   <main className="mx-auto lg:w-[1216px]">
     <section className="text-center my-8">
      <h2 className="text-3xl font-bold">
       Discover the best MuseIn Tools and their alternatives
      </h2>
     </section>
     <section>
-     <div className="flex justify-center space-x-4 mb-4">
-      <button className="bg-gray-800 text-white px-4 py-2 rounded">
-       Monetization
-      </button>
-      <button className="bg-gray-800 text-white px-4 py-2 rounded">
-       Community
-      </button>
-      <button className="bg-gray-800 text-white px-4 py-2 rounded">
-       Growth
-      </button>
-      <button className="bg-gray-800 text-white px-4 py-2 rounded">
-       Tools
-      </button>
-      <button className="bg-gray-800 text-white px-4 py-2 rounded">
-       Automation
-      </button>
-     </div>
+     <Tags />
      <div>
       <h3 className="section-title">
        Monetization
@@ -260,25 +224,24 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
       </div>
      </div>
     </section>
-    <section className="text-center">
-     <div className="submit-button">
-      <i className="fas fa-plus text-2xl">
-      </i>
+    <section className="text-center mt-8">
+     <div className="Subscribe-button">
+      <i className="fas fa-plus text-2xl"></i>
      </div>
      <p>
-      Submit your favourite tool
+      Subscribe your favourite tool
      </p>
      <p>
       {`Have a great tool? Let us know and we'll add it to the list.`}
      </p>
-     <button className="bg-blue-500 text-white px-4 py-2 rounded">
-      Submit
-     </button>
+     <div className="mt-4">
+      <Subscribe />
+     </div>
     </section>
    </main>
-   <footer className="text-center py-4">
+   <footer className="text-center py-4 mt-8">
     <p>
-     © 2023 MuseIn Tools
+     © 2023 {process.env.NEXT_PUBLIC_APP_NAME}
     </p>
    </footer>
   </div>
