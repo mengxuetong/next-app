@@ -1,6 +1,12 @@
 {
   "list": [
     {
+      "id": "23694105",
+      "title": "Deepfake Web",
+      "desc": "A web-based tool for creating deepfake videos by swapping faces in videos.",
+      "url": "deepfakeweb.com"
+    },
+    {
       "id": "44785544",
       "title": "Lumen5",
       "desc": "An AI-powered video creation platform that transforms text content into engaging videos.",
