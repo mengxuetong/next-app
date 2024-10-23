@@ -8,6 +8,7 @@
  */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from 'next/script'
 import "./globals.css";
 
 const geistSans = localFont({
@@ -38,6 +39,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <Script id="flexible" dangerouslySetInnerHTML={{ __html: `
+            (function (doc, win) {
+    var docEL = document.documentElement,
+      resizeEvt = "orientationchange" in window ? "orientationchange" : "resize",
+      recalc = function () {
+        // 获取当前设备的宽度
+        var clientWidth = docEL.clientWidth;
+        var fontSize;
+        if (!clientWidth) return;
+        if (clientWidth > 750) {
+          //宽度大于750，根元素字体大小不能超过100px（不能大于设计稿的最大宽度）
+          // docEL.style.fontSize = "100px"; //设置根元素大小
+          docEL.style.fontSize = "16px";
+          docEL.style.setProperty('--tpx', '0.0625rem');
+        } else {
+          fontSize = (clientWidth / 750) * 100
+          // docEL.style.fontSize = fontSize + "px";
+          docEL.style.fontSize = "16px";
+          docEL.style.setProperty('--tpx', (1/fontSize).toFixed(5) + "rem");
+        }
+      };
+    if (!doc.addEventListener) return;
+    //添加窗口变动监听
+    win.addEventListener(resizeEvt, recalc, false);
+    //dom加载的时候执行一次
+    // doc.addEventListener("DOMContentLoaded", recalc, false);
+    recalc();
+  })(document, window);
+  
+  
+          ` }} strategy="beforeInteractive">
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -30,7 +30,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
     <div className="mx-auto px-1 lg:px-4">
    <header className="w-full box-border flex justify-between items-center max-lg:ml-2 lg:ml-8 lg:mr-32 py-4">
     <div className="flex items-center">
-    <Image alt="Logo" className="mr-2" width={40} height={40}  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-z9tcWOfjB8eAwO1xiCEwlrAe.png?st=2024-10-12T13%3A48%3A11Z&amp;se=2024-10-12T15%3A48%3A11Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A07%3A29Z&amp;ske=2024-10-12T23%3A07%3A29Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=dgAUejPPA/vIcMtT7XCXE1hSZ%2Br065SUPsvOYgdOwR0%3D"/>
+    <Image alt="Logo" className="mr-2" width={40} height={40}  src="https://b0.bdstatic.com/95ba098f212409a664620726d8ade001.jpg@h_1280" />
      <h1 className="text-xl font-bold">
       {process.env.NEXT_PUBLIC_APP_NAME}
      </h1>
@@ -56,7 +56,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         {list?.map((product: IProduct) => {
           return (
             <div className="card" key={product.id}>
-            <Image  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
+            <Image alt="Patreon logo"  src="https://b0.bdstatic.com/95ba098f212409a664620726d8ade001.jpg@h_1280" width="40" height="40" />
             <div>
             <h3>
               {product.title}
@@ -69,7 +69,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
           )
         })}
        {/* <div className="card">
-        <Image  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
+        <img  alt="Patreon logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-CcLSiKvU4ycJw6AhWilwJFoK.png?st=2024-10-12T13%3A48%3A08Z&amp;se=2024-10-12T15%3A48%3A08Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A09%3A33Z&amp;ske=2024-10-12T23%3A09%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=iS4ToiNJRyvlV8pbWZszTWgmgk7P2A1Qrj0qUQjJJds%3D" width="40" height="40" />
         <div>
          <h3>
           Patreon
@@ -80,7 +80,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Ko-fi logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-aS2BD6BCz8gsKJxUrBM16zpO.png?st=2024-10-12T13%3A48%3A07Z&amp;se=2024-10-12T15%3A48%3A07Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T22%3A50%3A43Z&amp;ske=2024-10-12T22%3A50%3A43Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=fVn8cYIw57kN9qlSaoDE0t3bcH4srBWJnFUJ6JUYl2c%3D" width="40" height="40"/>
+       <img  alt="Ko-fi logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-aS2BD6BCz8gsKJxUrBM16zpO.png?st=2024-10-12T13%3A48%3A07Z&amp;se=2024-10-12T15%3A48%3A07Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T22%3A50%3A43Z&amp;ske=2024-10-12T22%3A50%3A43Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=fVn8cYIw57kN9qlSaoDE0t3bcH4srBWJnFUJ6JUYl2c%3D" width="40" height="40"/>
         <div>
          <h3>
           Ko-fi
@@ -91,7 +91,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Buy Me a Coffee logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-gwKYnxoNsKd6gTWAUfrzos4U.png?st=2024-10-12T13%3A48%3A06Z&amp;se=2024-10-12T15%3A48%3A06Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A10%3A33Z&amp;ske=2024-10-12T23%3A10%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=JN8tQSU36AShFOqAopGeDy5KMvUQ8c/laqb8leGdmgI%3D" width="40" height="40" />
+       <img  alt="Buy Me a Coffee logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-gwKYnxoNsKd6gTWAUfrzos4U.png?st=2024-10-12T13%3A48%3A06Z&amp;se=2024-10-12T15%3A48%3A06Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T23%3A10%3A33Z&amp;ske=2024-10-12T23%3A10%3A33Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=JN8tQSU36AShFOqAopGeDy5KMvUQ8c/laqb8leGdmgI%3D" width="40" height="40" />
         <div>
          <h3>
           Buy Me a Coffee
@@ -109,7 +109,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
        <div className="card">
-       <Image  alt="Zapier logo"  src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-UEfazH47pUH8uT5L67RtwMPB/user-tVR4rHUU0ssYhVqAvG6DjDDc/img-mOs5P85r0ECay2Aa2fGCbzbc.png?st=2024-10-12T13%3A48%3A07Z&amp;se=2024-10-12T15%3A48%3A07Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-10-11T22%3A52%3A40Z&amp;ske=2024-10-12T22%3A52%3A40Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=6EFhB0P9t7R4WJ%2BlIAoXIvmwLWeFn38yiT21d8GuejA%3D" width="40" height="40" />
+       <Image alt="Zapier logo"  src="https://b0.bdstatic.com/95ba098f212409a664620726d8ade001.jpg@h_1280" width="40" height="40" />
         <div>
          <h3>
           Zapier
@@ -120,7 +120,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="IFTTT logo" width={40} height={40}  src="https://placehold.co/40x40"/>
+       <img  alt="IFTTT logo" width={40} height={40}  src="https://placehold.co/40x40"/>
         <div>
          <h3>
           IFTTT
@@ -131,7 +131,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Integromat logo" width={40} height={40}  src="https://placehold.co/40x40"/>
+       <img  alt="Integromat logo" width={40} height={40}  src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Integromat
@@ -149,7 +149,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
        <div className="card">
-       <Image  alt="Google Analytics logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img  alt="Google Analytics logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Google Analytics
@@ -160,7 +160,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Canva logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img  alt="Canva logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Canva
@@ -171,7 +171,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Notion logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img  alt="Notion logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Notion
@@ -189,7 +189,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
        <div className="card">
-       <Image  alt="Slack logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img  alt="Slack logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Slack
@@ -200,7 +200,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image  alt="Trello logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img  alt="Trello logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Trello
@@ -211,7 +211,7 @@ export default async function Home({ searchParams }: {searchParams: {toPage: str
         </div>
        </div>
        <div className="card">
-       <Image   alt="Zoom logo" width={40} height={40} src="https://placehold.co/40x40"/>
+       <img   alt="Zoom logo" width={40} height={40} src="https://placehold.co/40x40"/>
         <div>
          <h3>
           Zoom
